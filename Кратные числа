@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Количество_кратных_чисел
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int divider;
+            int minDivider = 1;
+            int maxDivider = 28;
+            int quantityDivider = 0;
+            int minNumber = 0;
+            int maxNumber = 1000;
+            int MiuThreeDigitNumber = 100;
+            Random random = new Random();
+            divider = random.Next(minDivider, maxDivider);
+            Console.WriteLine(divider + " - Число N ");
+            Console.ReadKey();
+
+            for (int i = minNumber; i < maxNumber; i += divider)
+            { 
+                if (i >= MiuThreeDigitNumber)
+                {
+                    Console.WriteLine(i);
+                    quantityDivider++;
+                }
+            }
+
+            Console.WriteLine(quantityDivider + " - количество натуральных трехзначных чисел кратных " + divider);
+            Console.ReadKey();
+        }
+    }
+}
